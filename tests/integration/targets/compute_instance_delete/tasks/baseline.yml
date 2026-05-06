@@ -16,7 +16,7 @@
         tenant_target_namespace: "computeinstance-test-vm-work"
         # Note: delete.yaml doesn't have override hooks yet, so we use noop_template
         # TODO: Refactor instance delete.yaml to add override points
-        template_id_override: "osac.test_overrides.noop_template"
+        template_id_override: "osac.service.noop_template"
 
 - name: Import compute instance delete workflow (baseline)
   ansible.builtin.import_playbook: osac.compute_kubevirt.delete

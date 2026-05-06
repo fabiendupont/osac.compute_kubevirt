@@ -27,11 +27,11 @@
 
         # Override 3 workflow extension points
         hook_workflow_start:
-          name: osac.test_overrides.workflow_hooks
+          name: osac.service.workflow_hooks
           tasks_from: workflow_start.yml
 
         hook_workflow_complete:
-          name: osac.test_overrides.workflow_hooks
+          name: osac.service.workflow_hooks
           tasks_from: workflow_complete.yml
 
         # NOTE: Using real template (osac.compute_kubevirt.instance from fixture)
@@ -39,15 +39,15 @@
 
         # Override 3 template extension points
         delete_step_pre_delete_hook_override:
-          name: osac.test_overrides.vm_delete_hooks
+          name: osac.service.vm_delete_hooks
           tasks_from: pre_delete_hook.yml
 
         delete_step_resources_override:
-          name: osac.test_overrides.vm_delete_hooks
+          name: osac.service.vm_delete_hooks
           tasks_from: resources.yml
 
         delete_step_post_delete_hook_override:
-          name: osac.test_overrides.vm_delete_hooks
+          name: osac.service.vm_delete_hooks
           tasks_from: post_delete_hook.yml
 
         workflow_name: compute_instance_delete

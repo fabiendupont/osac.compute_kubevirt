@@ -27,11 +27,11 @@
 
         # Override 3 workflow extension points
         hook_workflow_start:
-          name: osac.test_overrides.workflow_hooks
+          name: osac.service.workflow_hooks
           tasks_from: workflow_start.yml
 
         hook_workflow_complete:
-          name: osac.test_overrides.workflow_hooks
+          name: osac.service.workflow_hooks
           tasks_from: workflow_complete.yml
 
         # NOTE: Using real template (osac.compute_kubevirt.instance from fixture)
@@ -40,27 +40,27 @@
 
         # Override 6 template extension points
         create_step_secrets_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: secrets.yml
 
         create_step_modify_vm_spec_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: modify_vm_spec.yml
 
         create_step_pre_create_hook_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: pre_create_hook.yml
 
         create_step_resources_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: resources.yml
 
         create_step_post_create_hook_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: post_create_hook.yml
 
         create_step_wait_annotate_override:
-          name: osac.test_overrides.vm_create_hooks
+          name: osac.service.vm_create_hooks
           tasks_from: wait_annotate.yml
 
         workflow_name: compute_instance_create
