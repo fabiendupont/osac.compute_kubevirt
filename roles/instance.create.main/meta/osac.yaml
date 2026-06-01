@@ -1,15 +1,13 @@
-# OSAC Add-On ResourceAction metadata
-# See: enhancement-proposals/enhancements/osac-addon/README.md
 resource_type: ComputeInstance
 event: Create
 phase: main
 priority: 100
 failure_policy: Fail
 
-# Template metadata (presentation layer for CatalogItems)
-title: Simple ComputeInstance Template
+title: KubeVirt ComputeInstance
 description: >
-  Simple ComputeInstance
+  Creates a KubeVirt VirtualMachine from a ComputeInstance CRD,
+  including secrets, DataVolumes, and network attachments.
 
 spec_defaults:
   cores: 2

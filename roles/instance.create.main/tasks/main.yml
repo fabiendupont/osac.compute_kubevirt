@@ -20,33 +20,33 @@
 - name: Set create step defaults
   ansible.builtin.set_fact:
     create_step_secrets_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_secrets.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: secrets.yaml
     create_step_modify_vm_spec_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_modify_vm_spec.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: modify_vm_spec.yaml
     create_step_pre_create_hook_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_pre_create_hook.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: pre_create_hook.yaml
     create_step_resources_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_resources.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: resources.yaml
     create_step_post_create_hook_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_post_create_hook.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: post_create_hook.yaml
     create_step_wait_annotate_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: create_wait_annotate.yaml
+      name: osac.compute_kubevirt.instance.create.main
+      tasks_from: wait_annotate.yaml
 
 - name: Step - Validate (params, VM config, exposed_ports)
   ansible.builtin.include_role:
-    name: osac.compute_kubevirt.instance
-    tasks_from: create_validate.yaml
+    name: osac.compute_kubevirt.instance.create.main
+    tasks_from: validate.yaml
 
 - name: Build VM template spec base
   ansible.builtin.include_role:
-    name: osac.compute_kubevirt.instance
-    tasks_from: create_build_spec.yaml
+    name: osac.compute_kubevirt.instance.create.main
+    tasks_from: build_spec.yaml
 
 - name: Step - Create secrets (user-data, SSH) and add to spec
   ansible.builtin.include_role:

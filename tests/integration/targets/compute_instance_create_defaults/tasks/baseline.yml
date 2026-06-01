@@ -15,8 +15,8 @@
 
     - name: Run create_validate to merge defaults and extract VM config
       ansible.builtin.include_role:
-        name: osac.compute_kubevirt.instance
-        tasks_from: create_validate.yaml
+        name: osac.compute_kubevirt.instance.create.main
+        tasks_from: validate.yaml
 
     - name: Verify compute instance name
       ansible.builtin.assert:

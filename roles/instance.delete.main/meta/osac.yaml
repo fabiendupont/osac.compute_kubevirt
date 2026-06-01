@@ -1,0 +1,9 @@
+resource_type: ComputeInstance
+event: Delete
+phase: main
+priority: 100
+failure_policy: Fail
+
+parameters: []
+
+outputs: []

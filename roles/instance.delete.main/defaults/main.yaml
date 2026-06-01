@@ -1,0 +1,4 @@
+---
+default_vm_internal_network: "hypershift"
+default_vm_storage_class: "nfs-client"
+default_vm_labels: "{{ {compute_instance_label: compute_instance_name} }}"

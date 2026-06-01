@@ -19,14 +19,14 @@
 - name: Set delete step defaults
   ansible.builtin.set_fact:
     delete_step_pre_delete_hook_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: delete_pre_delete_hook.yaml
+      name: osac.compute_kubevirt.instance.delete.main
+      tasks_from: pre_delete_hook.yaml
     delete_step_resources_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: delete_resources.yaml
+      name: osac.compute_kubevirt.instance.delete.main
+      tasks_from: resources.yaml
     delete_step_post_delete_hook_default:
-      name: osac.compute_kubevirt.instance
-      tasks_from: delete_post_delete_hook.yaml
+      name: osac.compute_kubevirt.instance.delete.main
+      tasks_from: post_delete_hook.yaml
 
 - name: Step - Pre-delete hook (no-op by default)
   ansible.builtin.include_role:
